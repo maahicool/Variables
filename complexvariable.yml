@@ -1,0 +1,12 @@
+--- 
+- name: complex varaible example
+  hosts: all
+
+  tasks:
+    - name: create user {{ user_name }}
+      user:
+        name: "{{ user_name }}"
+        uid: "{{ user_id }}"
+        comment: "{{ user_comment }}"
+        password: "{{ user_password | password_hash('sha512') }}"
+        state: present
