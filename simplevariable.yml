@@ -1,0 +1,10 @@
+---
+- name: playbook example with variable
+  hosts: all
+
+  tasks: 
+    - name: create user {{ user_name }}
+      user:
+        name: "{{ user_name }}"
+        state: present
+        
